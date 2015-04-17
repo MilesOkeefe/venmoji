@@ -15,7 +15,7 @@ if(Meteor.isServer){
 		return Emojis.find({}, {sort: {count: -1} });
 	});
 	Meteor.startup(function(){
-		//Meteor.setInterval(update, 5*1000);
+		Meteor.setInterval(update, 5*1000);
 	});
 	var nextUrl = "https://venmo.com/api/v5/public";
 	function update(){
