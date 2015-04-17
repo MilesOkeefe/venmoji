@@ -1,0 +1,18 @@
+<head>
+  <title>venmoji</title>
+</head>
+
+<body>
+	<div class="emojis">
+		{{#each emojis}}
+			{{> emoji}}
+		{{/each}}
+	</div>
+</body>
+
+<template name="emoji">
+	<div class="emoji">
+		<div class="glyph">{{_id}}</div>
+		<div class="count">{{count}}</div>
+	</div>
+</template>

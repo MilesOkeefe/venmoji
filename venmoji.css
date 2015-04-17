@@ -1,0 +1,14 @@
+.emojis{
+
+}
+	.emoji{
+		display:inline-block;
+		padding: 5px;
+		text-align: center;
+	}
+		.emoji .gylph{
+			font-size: 32px;
+		}
+		.emoji .count{
+			padding-top: 3px;
+		}
