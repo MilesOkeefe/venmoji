@@ -3,7 +3,7 @@ body{
 	font-family: sans-serif;
 }
 .emojis{
-
+	padding-bottom: 48px;
 }
 	.emoji{
 		display:inline-block;
