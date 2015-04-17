@@ -5,7 +5,8 @@ if (Meteor.isClient) {
 	Meteor.subscribe("emojis");
 	Template.body.helpers({
 		emojis: function(){
-			return Emojis.find();
+			var emojis = Emojis.find({}, {sort: {count: -1}});
+			return emojis;
 		}
 	});
 }
