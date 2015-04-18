@@ -1,8 +1,13 @@
+*{
+	box-sizing:border-box;
+}
 body{
 	background-color: #F9F9F9;
 	font-family: sans-serif;
+	margin:0;
 }
 .emojis{
+	position: relative;
 	padding-bottom: 48px;
 }
 	.emoji{
@@ -24,13 +29,34 @@ footer{
 	left:0px;
 	width:100%;
 	height:auto;
-	padding:20px;
+	padding:15px;
 	text-align: center;
+	line-height: 130%;
 	border-top: 1px solid rgba(52, 73, 94, 0.22);
 	background-color: #F9F9F9;
 	color:#34495e;
 }
+	footer br{
+		display: none;
+	}
 	footer a{
 		text-decoration: none;
 		color:#8e44ad;
 	}
+@media(max-width: 500px){
+	.emoji{
+		width:calc(100% / 8);
+	}
+	footer br{
+		display: block;
+	}
+}
+@media(max-width: 400px){
+	.emoji{
+		width:calc(100% / 6);
+	}
+	footer{
+		padding: 12px 10px;
+		font-size: 14px;
+	}
+}
