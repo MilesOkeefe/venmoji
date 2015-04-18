@@ -6,15 +6,6 @@ if (Meteor.isClient) {
 	Template.body.helpers({
 		emojis: function(){
 			var emojis = Emojis.find({}, {sort: {count: -1}});
-			/*_.each(emojis, function(emoji){
-				var count = emoji.count;
-				if(count >= 1000000){
-					count = (count/1000000).toFixed(2) + "m";
-				}else if(count >= 1000){
-					count = (count/1000).toFixed(2) + "k";
-				}
-				emoji.count = count;
-			});*/
 			return emojis;
 		}
 	});
