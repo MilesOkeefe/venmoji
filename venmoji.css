@@ -15,6 +15,10 @@ body{
 		padding: 15px 9px 10px 9px;
 		text-align: center;
 		border-bottom: 1px solid rgba(52, 73, 94, 0.22);
+		transition: background-color 0.8s;
+	}
+	.emoji.flash{
+		background-color: rgba(0, 255, 0, 0.2);
 	}
 		.emoji .glyph{
 			font-size: 24px;

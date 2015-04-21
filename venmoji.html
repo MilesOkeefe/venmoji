@@ -10,7 +10,7 @@
 	<footer>The most frequently used emojis on Venmo.<br> by <a href="http://miles.codes">miles</a></footer>
 </body>
 
-<template name="emoji"><div class="emoji">
+<template name="emoji"><div class="emoji" data-emoji="{{_id}}">
 		<div class="glyph">{{_id}}</div>
 		<div class="count">{{count}}</div>
 	</div></template>
