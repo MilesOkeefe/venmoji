@@ -31,6 +31,10 @@ if (Meteor.isClient) {
 			}
 
 		});
+		emojie.path = "images/emoji";
+		if(!Emojie.canRender("\ud83d\ude04")){
+			emojie(document.querySelector(".emojis"));
+		}
 	}
 }
 

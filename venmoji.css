@@ -23,6 +23,10 @@ body{
 		.emoji .glyph{
 			font-size: 24px;
 		}
+			.emoji .glyph img{
+				height: 24px;
+				vertical-align: baseline;
+			}
 		.emoji .count{
 			padding-top: 6px;
 			color:#34495e;
