@@ -50,9 +50,11 @@ if(Meteor.isServer){
 		HTTP.get("https://venmo.com/api/v5/public?until="+nextTime, {}, function(error, result){
 			result = result.data;
 			Times.insert({time: (new Date()).getTime()});
-			_.each(result.data, function(transaction){
-				addTransaction(transaction);
-			});
+			if(result.data){
+				_.each(result.data, function(transaction){
+					addTransaction(transaction);
+				});
+			}
 		});
 	}
 	function addTransaction(transaction){
