@@ -8,7 +8,7 @@ if (Meteor.isClient) {
 	Meteor.subscribe("emojis");
 	Template.body.helpers({
 		emojis: function(){
-			var emojis = Emojis.find({}, {sort: {count: -1}});
+			var emojis = Emojis.find({});
 			return emojis;
 		}
 	});
@@ -48,12 +48,14 @@ if(Meteor.isServer){
 	function update(){
 		var nextTime = Times.findOne({$query:{}, $orderby:{time: -1}}).time;//"https://venmo.com/api/v5/public";
 		HTTP.get("https://venmo.com/api/v5/public?until="+nextTime, {}, function(error, result){
-			result = result.data;
-			Times.insert({time: (new Date()).getTime()});
-			if(result.data){
-				_.each(result.data, function(transaction){
-					addTransaction(transaction);
-				});
+			if(!error && result){
+				result = result.data;
+				Timexs.insert({time: (new Date()).getTime()});
+				if(result.data){
+					_.each(result.data, function(transaction){
+						addTransaction(transaction);
+					});
+				}
 			}
 		});
 	}
